@@ -8,7 +8,7 @@
                     .then(response => response.text())
                 const target = document.getElementById(element);
                 
-                let ad = new Audio("/../Warning.mp3");
+                let ad = new Audio("./Warning.mp3");
                 ad.volume = 1;
                 if(sensorData > 5) {
                     target.innerHTML = `<h1>画面を切って下さい！</h1>`;
