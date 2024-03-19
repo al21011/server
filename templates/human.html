@@ -8,16 +8,6 @@
                     .then(response => response.text())
                 const target = document.getElementById(element);
                 
-                const music = new Audio('sound.mp3');
-                const play = document.getElementById('play');
-                play.addEventListener('click', function(){
-                if(!music.paused){
-                    music.pause();
-                }else{
-                    music.play();
-                }
-                });
-
                 if(sensorData > 5) {
                     target.innerHTML = `<h1>画面を切って下さい！</h1>`;
                 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>つけっぱなし防止</title>
+        <script>
+            const music = new Audio('sound.mp3');
+            const play = document.getElementById('play');
+
+            play.addEventListener('click', function(){
+            if(!music.paused){
+                play.innerHTML ="再生";
+                music.pause();
+            }else{
+                play.innerHTML = "停止";
+                music.play();
+            }
+            });
+
+        </script>
+    </head>
+    <body>
+        <center>
+            <div id = "data"></div>
+            <button id = "play">aaaaaa</button>
+        </center>
+        <script src="index.js"></script>
+    </body>
+</html>
