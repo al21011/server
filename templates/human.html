@@ -3,11 +3,11 @@
     <head>
         <title>つけっぱなし防止</title>
         <script>
-            let value;
+            var value;
             const updateHuman = async(url, element) => {
                 const sensorData = await fetch(url)
                     .then(response => response.text())
-                value = Number(sensorData);
+                value = sensorData;
                 const target = document.getElementById(element);
                 target.innerHTML = `<h1>${value}</h1>`;
             }
