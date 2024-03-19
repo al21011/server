@@ -7,7 +7,7 @@
 
             const updateHuman = async(url, element) => {
                 const sensorData = await fetch(url)
-                    .then(response => responst.text())
+                    .then(response => response.text())
 
                 if(sensorData == '0') {
                     value += 1;
