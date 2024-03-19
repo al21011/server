@@ -3,24 +3,12 @@
     <head>
         <title>つけっぱなし防止</title>
         <script>
-            let value = 0;
-
             const updateHuman = async(url, element) => {
                 const sensorData = await fetch(url)
                     .then(response => response.text())
 
-                if(sensorData == '0') {
-                    value ++;
-                }
-                else if(sensorData == '1') {
-                    value = 0;
-                }
-                else {
-                    value = -1;
-                }
-
                 const target = document.getElementById(element);
-                target.innerHTML = `<h1>${value}</h1>`;
+                target.innerHTML = `<h1>${sensorData}</h1>`;
             }
 
             // 自動更新
@@ -33,8 +21,5 @@
         </script>
     </head>
     <body onLoad="updateHuman('/human','data')">
-        <center>
-        <div id = "data">test</div>
-    </center>
     </body>
 </html>
