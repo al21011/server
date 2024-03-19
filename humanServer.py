@@ -9,11 +9,10 @@ def get_html():
 
 @app.route('/human',methods=['POST'])
 def update_human():
-    time = request.form["time"]
     human = request.form["human"]
     try:
         f = open(file_path, "w")
-        f.write(time + "," + human)
+        f.write(human)
         return "succeeded to write"
     except Exception as e:
         print(e)
