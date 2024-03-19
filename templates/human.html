@@ -10,7 +10,7 @@
                     .then(response => response.text())
 
                 if(sensorData == '0') {
-                    value += 1;
+                    value ++;
                 }
                 else if(sensorData == '1') {
                     value = 0;
@@ -24,12 +24,12 @@
             }
 
             // 自動更新
-            const autoUpdate = () => {
-                updateHuman('/human', 'data');
-                setTimeout(autoUpdate, 1000);
+            function doReload() {
+                window.location.reload();
             }
-
-            window.onload = autoUpdate;
+            window.addEventListener('load',function(){
+                setTimeout(doReload, 1000);
+            });
         </script>
     </head>
     <body onLoad="updateHuman('/human','data')">
