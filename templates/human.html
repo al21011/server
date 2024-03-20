@@ -8,11 +8,19 @@
                     .then(response => response.text())
                 const target = document.getElementById(element);
                 
+                const colors = [
+                    "cyan",
+                    "chartreuse",
+                    "magenta",
+                    "yellow",
+                ];
                 if(sensorData > 5) {
                     target.innerHTML = `<h1>画面を切って下さい！</h1>`;
+                    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
                 }
                 else {
                     target.innerHTML = `<h1>PCの前に人を検知しています。</h1>`;
+                    document.body.style.backgroundColor = "white";
                 }
             }
 
